@@ -1,0 +1,69 @@
+:root{
+  --bg:#0b1020; --card:#141b2e; --line:#243049; --ink:#e8edf7;
+  --muted:#8b97b4; --accent:#5b8cff; --accent2:#7a5cff;
+  --good:#3ddc97; --bad:#ff6b6b; --warn:#ffb020;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; font-family:-apple-system,Segoe UI,Roboto,Inter,sans-serif;
+  background:radial-gradient(1200px 600px at 70% -10%,#1b2545 0%,var(--bg) 55%);
+  color:var(--ink); display:flex; flex-direction:column; align-items:center;
+  justify-content:center; padding:24px;
+}
+.lab-banner{
+  position:fixed; top:0; left:0; right:0; text-align:center; font-size:12.5px;
+  letter-spacing:.3px; padding:7px 12px; color:#1a1300; font-weight:600;
+  background:linear-gradient(90deg,#ffd166,#ffb020); z-index:10;
+}
+.card{
+  width:100%; max-width:380px; background:linear-gradient(180deg,#161e34,#111829);
+  border:1px solid var(--line); border-radius:18px; padding:34px 30px;
+  box-shadow:0 30px 80px rgba(0,0,0,.55); margin-top:28px;
+}
+.card.wide{max-width:440px}
+.brand{display:flex; align-items:center; gap:10px; margin-bottom:22px}
+.logo{
+  width:34px; height:34px; border-radius:9px; display:grid; place-items:center;
+  background:linear-gradient(135deg,var(--accent),var(--accent2)); font-size:18px;
+  color:#fff; box-shadow:0 6px 18px rgba(91,140,255,.4);
+}
+.brand-name{font-weight:700; font-size:19px; letter-spacing:-.2px}
+.logout{margin-left:auto; font-size:13px; color:var(--muted); text-decoration:none}
+.logout:hover{color:var(--ink)}
+h1{font-size:23px; margin:4px 0 4px; letter-spacing:-.3px}
+h1.denied{color:var(--bad)}
+.sub{color:var(--muted); margin:0 0 22px; font-size:14px}
+label{display:block; font-size:13px; color:var(--muted); margin-bottom:14px}
+input{
+  width:100%; margin-top:7px; padding:12px 13px; border-radius:10px;
+  border:1px solid var(--line); background:#0e1526; color:var(--ink);
+  font-size:15px; outline:none; transition:border .15s,box-shadow .15s;
+}
+input:focus{border-color:var(--accent); box-shadow:0 0 0 3px rgba(91,140,255,.22)}
+button{
+  width:100%; margin-top:6px; padding:12px; border:0; border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff;
+  font-size:15px; font-weight:600; cursor:pointer;
+  box-shadow:0 10px 26px rgba(91,140,255,.35);
+}
+button:hover{filter:brightness(1.07)}
+.error{
+  background:rgba(255,107,107,.12); border:1px solid rgba(255,107,107,.4);
+  color:#ffc0c0; padding:10px 12px; border-radius:9px; font-size:13.5px; margin-bottom:16px;
+}
+.hint{margin-top:18px; font-size:12.5px; color:var(--muted); text-align:center}
+.hint code{background:#0e1526; padding:2px 6px; border-radius:5px; color:#cdd9ff}
+.mode{margin-top:14px; font-size:11px; text-align:center; color:var(--muted); opacity:.75}
+.greeting{font-size:15px; color:var(--muted); margin:6px 0 18px}
+.balance-card{
+  background:linear-gradient(135deg,#1c2a52,#2a1c52); border:1px solid var(--line);
+  border-radius:14px; padding:20px; display:flex; flex-direction:column; gap:4px; margin-bottom:18px;
+}
+.balance-label{font-size:12.5px; color:var(--muted)}
+.balance-value{font-size:30px; font-weight:700; letter-spacing:-.5px}
+.acct{font-size:12px; color:var(--muted); margin-top:4px; font-family:ui-monospace,monospace}
+.rows{display:flex; flex-direction:column; gap:2px}
+.row{display:flex; justify-content:space-between; padding:11px 2px; border-bottom:1px solid var(--line); font-size:14px}
+.row:last-child{border-bottom:0}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+.explain{font-size:13px; color:var(--muted); line-height:1.5; margin-top:10px}

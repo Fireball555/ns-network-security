@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaultly — Account</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="lab-banner">⚠ NETWORK SECURITY LAB — fictional demo app, isolated network only</div>
+
+  <div class="accwrap">
+    <main class="acard">
+      <div class="brandrow">
+        <div class="logo">◈</div>
+        <span class="brand-name">Vaultly</span>
+        <a class="logout" href="{{ url_for('logout') }}">Sign out</a>
+      </div>
+
+      <div class="greeting">Signed in as <strong>{{ u.name }}</strong></div>
+
+      <div class="balance-card">
+        <span class="balance-label">Available balance</span>
+        <span class="balance-value">{{ u.balance }}</span>
+        <span class="acct">Account {{ u.acct }}</span>
+      </div>
+
+      <div class="rows">
+        <div class="rowx"><span>Recent transfer</span><span class="neg">− ₹ 1,200.00</span></div>
+        <div class="rowx"><span>Salary credit</span><span class="pos">+ ₹ 52,000.00</span></div>
+        <div class="rowx"><span>Card payment</span><span class="neg">− ₹ 3,499.00</span></div>
+      </div>
+
+      <div class="mode">mode: {{ mode }}</div>
+    </main>
+  </div>
+</body>
+</html>

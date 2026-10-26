@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaultly — Sign in</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="lab-banner">⚠ NETWORK SECURITY LAB — fictional demo app, isolated network only</div>
+
+  <div class="shell">
+    <!-- brand / trust side (the "looks safe" cues are deliberate) -->
+    <section class="brandpane">
+      <div class="brandrow">
+        <div class="logo">◈</div>
+        <span class="brand-name">Vaultly</span>
+      </div>
+
+      <div class="tagline">Banking that feels<br><span>effortlessly secure.</span></div>
+
+      <ul class="trust">
+        <li><span class="ic">🔒</span> 256-bit end-to-end encryption</li>
+        <li><span class="ic">🛡️</span> SOC 2 Type II certified</li>
+        <li><span class="ic">✓</span> Trusted by 2.4M customers</li>
+      </ul>
+
+      <div class="brandfoot">© 2026 Vaultly Financial · Your security is our priority</div>
+    </section>
+
+    <!-- form side -->
+    <section class="formpane">
+      <main class="card">
+        <div class="mobilebrand"><div class="logo">◈</div><span class="brand-name">Vaultly</span></div>
+
+        <div class="secure-pill">🔒 Secured connection</div>
+        <h1>Welcome back</h1>
+        <p class="sub">Sign in to access your account</p>
+
+        {% if error %}<div class="error">{{ error }}</div>{% endif %}
+
+        <form method="post" action="{{ url_for('login') }}">
+          <label>Username
+            <input name="username" autocomplete="off" placeholder="smaran" required autofocus>
+          </label>
+          <label>Password
+            <input name="password" type="password" placeholder="••••••••••" required>
+          </label>
+          <div class="row-between"><span></span><a href="#">Forgot password?</a></div>
+          <button type="submit">Sign in securely</button>
+        </form>
+
+        <div class="badges">
+          <span class="badge">🔒 SSL</span>
+          <span class="badge">🛡️ PCI DSS</span>
+          <span class="badge">✓ Verified</span>
+        </div>
+
+        <div class="hint">Demo login — <code>smaran</code> / <code>Password123!</code></div>
+        <div class="mode">mode: {{ mode }}</div>
+      </main>
+    </section>
+  </div>
+</body>
+</html>

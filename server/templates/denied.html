@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vaultly — Access denied</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="lab-banner">⚠ NETWORK SECURITY LAB — fictional demo app, isolated network only</div>
+
+  <div class="accwrap">
+    <main class="acard denied center">
+      <div class="brandrow" style="justify-content:center">
+        <div class="logo">◈</div><span class="brand-name">Vaultly</span>
+      </div>
+      <h1>Session rejected</h1>
+      <p class="sub">This session token is not valid for this client.</p>
+      <p class="explain">In <strong>secure mode</strong> the session is bound to the IP it was
+         issued to. A token replayed from a different machine is refused — this is the
+         replayed cookie being blocked.</p>
+      <div class="mode">mode: {{ mode }}</div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+# runtime artifacts — never commit these
+server/cert.pem
+server/key.pem
+attacker/stolen_cookie.txt
+/tmp/
+*.log
+.venv/
+venv/
